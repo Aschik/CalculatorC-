@@ -1,0 +1,89 @@
+﻿<Window x:Class="Kalkulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kalkulator"
+        mc:Ignorable="d"
+        Title="Kalkulator" Height="450" Width="300">
+    <Grid>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Przyciski (numerki) -->
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="7" x:Name="btn7" Grid.Row="2" Grid.Column="0" Click="Btn1_Click"  ></Button>
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="8" x:Name="btn8" Grid.Row="2" Grid.Column="1" Click="Btn1_Click"  ></Button>
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="9" x:Name="btn9" Grid.Row="2" Grid.Column="2" Click="Btn1_Click" ></Button>
+
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="4" x:Name="btn4" Grid.Row="3" Grid.Column="0" Click="Btn1_Click"   ></Button>
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="5" x:Name="btn5" Grid.Row="3" Grid.Column="1" Click="Btn1_Click"   ></Button>
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="6" x:Name="btn6" Grid.Row="3" Grid.Column="2" Click="Btn1_Click"   ></Button>
+
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="1" x:Name="btn1" Grid.Row="4" Grid.Column="0"    Click="Btn1_Click"  />
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="2" x:Name="btn2" Grid.Row="4" Grid.Column="1" Click="Btn1_Click"   ></Button>
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="3" x:Name="btn3" Grid.Row="4" Grid.Column="2" Click="Btn1_Click"  ></Button>
+
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="0"  Grid.Row="5" Grid.Column="0"  Click="Btn1_Click"  ></Button>
+
+        <!-- Przyciski (Matma) -->
+
+        <Button FontSize="25" Background="#FFFCA010" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light"  Content="+" ContentStringFormat="+" x:Name="btnPlus" Grid.Row="1" Grid.Column="3"  Click="Operator_Click" ></Button>
+        <Button FontSize="25" Background="#FFFCA010" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light" Content="-" ContentStringFormat="-" x:Name="btnMinus" Grid.Row="2" Grid.Column="3" Click="Operator_Click" ></Button>
+        <Button FontSize="25" Background="#FFFCA010" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light" Content="x" ContentStringFormat="x" x:Name="btnTimes" Grid.Row="3" Grid.Column="3" Click="Operator_Click" ></Button>
+        <Button FontSize="25" Background="#FFFCA010" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light" Content="/" ContentStringFormat="/" x:Name="btnDivide" Grid.Row="4" Grid.Column="3" Click="Operator_Click"  ></Button>
+        <Button FontSize="25" Background="#FFFCA010" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light" Content="=" ContentStringFormat="=" x:Name="btnEquals" Grid.Row="5" Grid.Column="3" Click="BtnEquals_Click"  ></Button>
+
+        <!-- Przyciski inne funckje-->
+        <Button FontSize="25" Background="#FF181007" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light" x:Name="btnClearEntry" Grid.Row="1" Grid.Column="0" Click="BtnClearEntry_Click">CE</Button>
+        <Button FontSize="25" Background="#FF181007" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light" x:Name="btnClear" Grid.Row="1" Grid.Column="1" Click="BtnClear_Click">C</Button>
+
+
+        <!-- Przecinek i +/- -->
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" x:Name="btnPositiveNegative" Grid.Row="5" Grid.Column="1" Click="BtnPositiveNegative_Click"   >+/-</Button>
+        <Button Background="#FF26222C" Foreground="Wheat" 
+              FontSize="45"  FontWeight="Regular" FontFamily="Bahnschrift Light" Content="," x:Name="Common" Grid.Row="5" Grid.Column="2" Click="Common_Click"  ></Button>
+        <Button FontSize="25" Background="#FF181007" Foreground="Wheat" 
+                FontWeight="Regular" FontFamily="Bahnschrift Light" x:Name="ButtonBCSP" Grid.Row="1" Grid.Column="2" Click="ButtonBCSP_Click">⌫</Button>
+        <!-- TextBox-->
+        <TextBox  Background="#28303B" Foreground="Wheat"  
+                 FontWeight="Regular" FontFamily="Bahnschrift Light"  x:Name="txtDisplay" BorderThickness="0" FontSize="40" TextAlignment="Right" VerticalAlignment="Bottom" IsReadOnly="True" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Height="43" Margin="0,0,0,0.4">0</TextBox>
+
+        <!-- To szare cos-->
+        <Label   Background="#28303B" Foreground="Wheat"  
+                 FontWeight="Regular" FontFamily="Bahnschrift Light"  x:Name="equation" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="294" FontSize="14" FontStyle="Italic" Opacity="0.995" Grid.ColumnSpan="4" />
+
+    </Grid>
+</Window>
